@@ -1,0 +1,25 @@
+import re
+
+def alphanum_sort( s ): 
+    def Myf(s):
+      if(s.isupper()):
+        return s.lower()
+      else:
+        return s
+    return sorted(s, key=Myf)
+
+if __name__=="__main__":
+  slist=[]
+  slistn=[]
+  with open('input.txt','r') as f:
+    for line in f:
+        for word in line.split(' '):
+           slist.append(word)  
+  for i in range(len(slist)):
+    if re.findall('[A-Za-z0-9]',slist[i][0]):
+      slistn.append(slist[i])
+  
+  f= open("output.txt","w+")
+  for x in alphanum_sort(slistn):
+    f.write(x+"\n")
+  f.close()

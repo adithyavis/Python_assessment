@@ -1,0 +1,27 @@
+def binarysearch(l,element):
+  first=0
+  last=len(l)-1
+  found=False
+  while first<=last and not found:
+    midpoint = (first + last)//2
+    if l[midpoint] == element:
+	    found = True
+    else:
+	    if element < l[midpoint]:
+	      last = midpoint-1
+	    else:
+	      first = midpoint+1
+  string="Element found at {}".format(midpoint)
+  if(first>last):
+    return "Element not found"
+  else: return string
+
+
+if __name__=="__main__":
+  list=[]
+  print("Number of elements")
+  N=int(input())
+  for i in range(N):
+    print("Enter Data")
+    list.append(input())
+  print(binarysearch(list,"adi"))

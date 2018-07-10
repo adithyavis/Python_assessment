@@ -1,0 +1,32 @@
+def validate(s):
+  a=0
+  if(any(c.islower() for c in s)):
+    a=a+1
+  if(any(c.isupper() for c in s)):
+    a=a+1
+  if(any(c.isnumeric() for c in s)):
+    a=a+1
+  if(any(c=='@' or c=='#' or c=='$' for c in s)):
+    a=a+1
+  if(len(s)>=6):
+    a=a+1
+  if(len(s)<=12):
+    a=a+1
+  
+  if(a==6):
+    print("valid")
+    return True
+  else:
+    print("not valid")
+    return False
+
+
+if __name__=="__main__":
+  print("Input password")
+  string=input()
+  f= open("Validate.txt","w+")
+  if(validate(string)):
+    f.write(string," valid")
+  else:
+    f.write(string," not valid")
+  f.close()

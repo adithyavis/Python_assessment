@@ -1,0 +1,7 @@
+import json
+from pprint import pprint
+
+if __name__=="__main__":
+  with open('data.json') as f:
+    data = json.load(f)
+  pprint(data["Records"][0]["s3"]["bucket"]["arn"])

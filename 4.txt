@@ -1,0 +1,10 @@
+if __name__=="__main__":
+  list=[]
+  print("number of elements in list")
+  N = int(input())
+  for _ in range(N):
+     print(" enter each element of a tuple element after space. press enter after a tuple has been entered")
+     list.append(tuple(x for x in input().split()))
+  def Myfn(tuple):
+    return tuple[-1]
+  print(sorted(list,key=Myfn))

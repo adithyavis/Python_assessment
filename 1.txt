@@ -24,9 +24,9 @@ def validate(s):
 if __name__=="__main__":
   print("Input password")
   string=input()
-  f= open("Validate.txt","w+")
+  f= open("Validate.txt","a+")
   if(validate(string)):
-    f.write(string," valid")
+    f.write("%s is valid \n"%string)
   else:
-    f.write(string," not valid")
+    f.write("%s is not valid \n" %string)
   f.close()

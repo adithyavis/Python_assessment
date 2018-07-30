@@ -21,7 +21,9 @@ if __name__=="__main__":
   list=[]
   print("Number of elements")
   N=int(input())
+  print("Element to search: Please enter only integers")
+  search=int(input())
   for i in range(N):
-    print("Enter Data")
-    list.append(input())
-  print(binarysearch(list,"adi"))
+    print("Enter Data: Please enter only integers")
+    list.append(int(input()))
+  print(binarysearch(list,search))
